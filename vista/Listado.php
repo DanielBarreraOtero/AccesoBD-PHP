@@ -2,7 +2,7 @@
 require_once "AccesoBD-PHP\modelo\AccesoDB.php";
 $con = newConn();
 
-if (isset($_GET['page'])){
+if (isset($_GET['page']) && $_GET['page'] > 1){
     $page = $_GET['page'];
 } else {
     $page = 1;
@@ -23,7 +23,7 @@ if (isset($_GET['page'])){
 <body>
     <center>
         <h2>Listado de Alumnos</h2>
-        <button id="nuevo">Nuevo Alumno</button>
+        <button id="nuevo" page=<?php echo "$page";?>>Nuevo Alumno</button>
         <table id="tabla">
             <tr>
                 <th id="nombre">Nombre</th>
@@ -39,11 +39,18 @@ if (isset($_GET['page'])){
                     foreach ($pagina as $value) {
                         echo "<tr><td>$value[1]</td><td>$value[2]</td>".
                         "<td><img src='$value[3]''></td><td><a href='Edita.php?id=".
-                        "$value[0]&page=$page'>✏️</a><a href='Borra.php?id=".
+                        "$value[0]&page=$page'>✏️</a><a href='Borrar.php?id=".
                         "$value[0]&page=$page'>🗑️</a></td></tr>";
                     }
                 }
                 ?>
+            </tr>
+            <tr>
+                <td colspan="4">
+                <button id="anterior" page=<?php echo "$page";?>>◀</button>
+                Página: <?php echo $page?>
+                <button id="siguiente" page=<?php echo "$page";?>>▶</button>
+                </td>
             </tr>
         </table>
     </center>
