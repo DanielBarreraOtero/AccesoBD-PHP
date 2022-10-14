@@ -1,0 +1,22 @@
+body {
+    background-image: url(../../helpers/maxresdefault.jpg)
+}
+.formulario {
+    text-align: left;
+    margin: 4mm;
+}
+.caja {
+    background-color: azure;
+    text-align: center;
+    border: 1mm;
+    border-style:solid;
+    width: 600px;
+    height: auto;
+    margin: auto;
+    margin-top: 150px;
+}
+.check {
+    text-align: center;
+    width:20px;
+    height:20px;
+}
