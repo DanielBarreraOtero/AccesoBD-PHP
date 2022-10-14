@@ -11,7 +11,30 @@ body {
     border: 1mm;
     border-style:solid;
     width: 600px;
-    height: auto;
+    height: 250px;
     margin: auto;
     margin-top: 150px;
+}
+#fotito {
+    max-width: 148px;
+    max-height: 184px;
+}
+.cajafoto {
+    border: 1mm;
+    border-style:solid;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.cajaformu {
+    float: left;
+    width: 320px;
+    height: 300px;
+}
+#volver {
+    margin-right: 20px;
+    margin-top: 50px;
+    float: right;
+    clear: right;
 }

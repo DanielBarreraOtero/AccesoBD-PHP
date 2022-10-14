@@ -1,6 +1,13 @@
 <?php
     require_once "../modelo/AccesoDB.php";
 
+    if (isset($_GET["page"])&&($_GET["page"])>1) {
+        $page= $_GET["page"];
+    }
+    else {
+        $page=1;
+    }
+
     if (isset($_POST["Guardar"])) {
         $page=$_GET["page"];
         $id=$_GET["id"];
@@ -46,6 +53,7 @@
         <br><br>
         <input type="submit" name="Guardar">
     </form>
+    <button name="volver" id="volver" page=<?php echo "$page";?>>Volver al listado</button><br><br>
     <div>
 </body>
 </html>

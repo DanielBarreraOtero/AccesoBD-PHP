@@ -1,9 +1,22 @@
 <?php
     require_once "../modelo/AccesoDB.php";
 
-    $id=$_POST["id"];
+    if (isset($_GET["page"])&&($_GET["page"])>1) {
+        $page= $_GET["page"];
+    }
+    else {
+        $page=1;
+    }
+
+    if (empty($_GET["id"])){
+        header("Location: Error.php?error=0&page=$page");
+    }
+    else {
+        $id=$_GET["id"];
+    }
+
     if (isset($_POST["borrar"])) {
-        deleteAlumById(newConn(),id);
+        deleteAlumById(newConn(),$id);
     }
 ?>
 
@@ -18,21 +31,24 @@
 </head>
 <body>
     <div class="caja">
+    <div class="cajaformu">
     <form class="formulario" method="post" action="" enctype="multipart/form-data">
         <h2>Información del alumno</h2>
         <label for="id">ID del alumno</label>
         <input type="text" name="id" id="country" size="1"><br><br>
         <label for="nombre">Nombre *</label>
-        <input type="text" name="nombre" id="nombre">&nbsp&nbsp&nbsp<input name="nombrecheck" id="check1" type="checkbox" checked>
+        <input type="text" name="nombre" id="nombre">
         <br><br>
         <label for="apellido">1er Apellido *</label>
-        <input type="text" name="apellido" id="apellido">&nbsp&nbsp&nbsp<input name="apellidocheck" id="check2" type="checkbox" checked>
-        <br><br>
-        <label for="foto">Foto *</label>
-        <input type="file" name="foto" id="foto">&nbsp&nbsp&nbsp<input name="fotocheck" id="check3" type="checkbox" checked>
+        <input type="text" name="apellido" id="apellido">
         <br><br>
         <input type="submit" value="Borrar" name="borrar" id="borrar">
     </form>
+    </div>
+    <div class="cajafoto">
+        <img id="fotito" src=<?php echo "'../helpers/81yxfavkz2c51.png'"; ?>/>
+    </div>
+    <button name="volver" id="volver" page=<?php echo "$page";?>>Volver al listado</button><br><br>
     </div>
 </body>
 </html>
