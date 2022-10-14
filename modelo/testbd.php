@@ -22,7 +22,7 @@ if (isset($_POST['selectPage'])) {
 }
 
 if (isset($_POST['borrar'])) {
-    echo deleteAlumById($con, 6);
+    echo deleteAlumById($con, 5);
 }
 
 if (isset($_POST['modificar'])) {
