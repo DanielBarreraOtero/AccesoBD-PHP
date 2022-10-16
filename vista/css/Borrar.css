@@ -11,7 +11,7 @@ body {
     border: 1mm;
     border-style:solid;
     width: 600px;
-    height: 250px;
+    height: 290px;
     margin: auto;
     margin-top: 150px;
 }
@@ -37,4 +37,7 @@ body {
     margin-top: 50px;
     float: right;
     clear: right;
+}
+#idalum, #nombre, #apellido {
+    background-color: lightgray;
 }

@@ -38,7 +38,7 @@
 <body>
     <div class="caja">
     <form class="formulario" action="" method="post" enctype="multipart/form-data">
-        <h2>Información del alumno</h2>
+        <h2>Ficha del alumno</h2>
         <label for="nombre">Nombre *</label>
         <input type="text" name="nombre" id="nombre"> 
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp

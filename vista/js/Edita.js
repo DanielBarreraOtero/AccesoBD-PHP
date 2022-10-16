@@ -7,6 +7,8 @@ window.onload=function(){
     var apellido=document.getElementById("apellido");
     var foto=document.getElementById("foto");
 
+    var volver = document.getElementById("volver");
+
     check1.onclick = function () {
         if (check1.checked) {
             nombre.readOnly = false;
@@ -32,13 +34,9 @@ window.onload=function(){
             foto.style.display="none";
         }
     }
-
-    window.onload = function () {
-        var volver = document.getElementById("volver");
         
-        volver.onclick=function(){
-            page= volver.attributes["page"].value;
-            window.location.href = "Listado.php?page="+page;
-        }
+    volver.onclick=function(){
+        page= volver.attributes["page"].value;
+        window.location.href = "Listado.php?page="+page;
     }
 }

@@ -1,6 +1,10 @@
+body {
+    background-image: url(../../helpers/maxresdefault.jpg);
+    margin-top: 80px;
+}
 #nuevo {
     border: 1px solid black;
-    background-color: gray;
+    background-color: azure;
     width: 150px;
     height: 25px;
     margin-bottom: 10px;
@@ -17,6 +21,7 @@ table, th, td {
 
 table {
     width: 90%;
+    background-color: azure;
 }
 
 #accion {

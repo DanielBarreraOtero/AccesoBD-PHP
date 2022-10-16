@@ -2,7 +2,8 @@
 
 function newConn()
 {
-    $con = new PDO("mysql:host=localhost;dbname=accesobd-php", "root", "");
+    $con = new PDO("mysql:host=localhost;dbname=dwese", "root", "");
+    //accesobd-php 
     return $con;
 }
 

@@ -1,5 +1,5 @@
 <?php
-require_once "AccesoBD-PHP\modelo\AccesoDB.php";
+require_once "../modelo/AccesoDB.php";
 $con = newConn();
 
 if (isset($_GET['page']) && $_GET['page'] > 1){
@@ -22,9 +22,11 @@ if (isset($_GET['page']) && $_GET['page'] > 1){
 </head>
 <body>
     <center>
-        <h2>Listado de Alumnos</h2>
         <button id="nuevo" page=<?php echo "$page";?>>Nuevo Alumno</button>
         <table id="tabla">
+            <tr>
+                <th colspan='4'><h2>Listado de Alumnos</h2></th>
+            </tr>
             <tr>
                 <th id="nombre">Nombre</th>
                 <th id="apellido">Apellido</th>
