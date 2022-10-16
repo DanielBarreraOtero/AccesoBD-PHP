@@ -1,7 +1,24 @@
 body {
-    background-image: url(../../helpers/dabf57ba1aea74b11939294aec52b277.gif);
+    background-image: url(../../helpers/9849.jpg);
     background-size: cover;
 }
-h1 {
-    color: aliceblue;
+.linea1 {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 3cm;
+}
+.error {
+    width: 150 px;
+    height: auto;
+    padding-left: 350px;
+    padding-top: 90px;
+
+}
+.linea2 {
+    font-weight: bold;
+    font-size: 1cm;
+    width: 390px;
+}
+#volver {
+    margin-left: 350px;
 }

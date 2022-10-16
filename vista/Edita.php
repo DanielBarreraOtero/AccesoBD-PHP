@@ -3,20 +3,20 @@
     $id=$_GET["id"];
     $resul=getAlumById(newConn(),$id);
 
-    //comprobación de que recibimos un id
-    if (empty($_GET["id"])){
-        header("Location: Error.php?error=0&page=$page");
-    }
-    else {
-        $id=$_GET["id"];
-    }
-
     //comprobación de que recibimos una página mayor que 1, si no, se la asignamos
     if (isset($_GET["page"])&&($_GET["page"])>1) {
         $page= $_GET["page"];
     }
     else {
         $page=1;
+    }
+
+    //comprobación de que recibimos un id
+    if (empty($_GET["id"])){
+        header("Location: Error.php?error=0&page=$page");
+    }
+    else {
+        $id=$_GET["id"];
     }
 
     //cuando se pulse el botón guardar, obtenemos los datos de los campos
@@ -29,6 +29,9 @@
             $imagen=file_get_contents($_FILES['foto']['tmp_name']);
             $path = $_FILES['foto']['tmp_name'];
             $type = pathinfo($path, PATHINFO_EXTENSION);
+            if ($type!="jpg"&&$type!="jpeg"&&$type!="png") {
+                header("Location: Error.php?error=2&page=$page");
+            }
             $img= 'data:image/' . $type . ';base64,' . base64_encode($imagen);
         }
         else {
@@ -88,7 +91,7 @@
         <input type="text" name="apellido" id="apellido" value=<?php echo "$resul[2]"?>>&nbsp&nbsp&nbsp<input name="apellidocheck" id="check2" type="checkbox" checked>
         <br><br>
         <label for="foto">Foto *</label>
-        <input type="file" name="foto" id="foto" value=<?php echo "$resul[3]"?>>&nbsp&nbsp&nbsp<input name="fotocheck" id="check3" type="checkbox" checked>
+        <input type="file" name="foto" id="foto"<?php echo "$resul[3]"?>>&nbsp&nbsp&nbsp<input name="fotocheck" id="check3" type="checkbox" checked>
         <br><br>
         <input type="submit" name="Guardar" value="Guardar cambios">
     </form>

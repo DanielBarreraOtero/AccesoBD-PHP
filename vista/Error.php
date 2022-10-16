@@ -4,8 +4,10 @@ if (isset($_GET["page"]) && ($_GET["page"]) > 1) {
 } else {
     $page = 1;
 }
+$error=[$_GET["error"]];
 $errores[] = "Es necesario el ID del alumno para continuar.";
 $errores[] = "Es necesario rellenar todos los campos antes de editar un alumno.";
+$errores[] = "El archivo subido debe ser del tipo JPG, JPEG o PNG. ";
 
 ?>
 <!DOCTYPE html>
@@ -19,12 +21,12 @@ $errores[] = "Es necesario rellenar todos los campos antes de editar un alumno."
     <title>Document</title>
 </head>
 <body>
-    <center><h1><?php echo $errores[$_GET["error"]]; ?></h1></center>
-    <center><button name="volver" id="volver" page=<?php echo "$page";?>>Volver al listado</button></center>
-    <img src="../helpers/81yxfavkz2c51.png"/>
-    <audio controls>
-        <source src="../helpers/Vegeta bajo la lluvia - la oreja de Van Gogh - mil rosas [TubeRipper.com].mp3" type="audio/mpeg">
-    </audio>
+    <div class="error">
+        <p class="linea1">Ups...</p>
+        <p class="linea2">españa no va bien.</p>
+        <p class="linea2"><?php echo $errores[$_GET["error"]]; ?></p>
+    </div>
+    <button name="volver" id="volver" page=<?php echo "$page";?>>Volver al listado</button>
     
 </body>
 </html>

@@ -21,7 +21,19 @@
         deleteAlumById(newConn(),$id);
     }
 ?>
-
+<script type="text/javascript">
+    function ConfirmDelete() {
+     var respuesta = confirm("Estas seguro que deseas Eliminar al usuario?");
+                                                                             I
+     if (respuesta == true)
+     {
+         return true;
+     }
+     else {
+        return false;
+    }
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +51,13 @@
         <h2>Ficha del alumno</h2>
         <label for="id">ID del alumno</label>
         <input type="text" name="id" id="idalum" size="1" value=<?php echo "$id"?> readonly><br><br>
-        <label for="nombre">Nombre *</label>
+        <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" value=<?php echo "$resul[1]"?> readonly>
         <br><br>
-        <label for="apellido">1er Apellido *</label>
+        <label for="apellido">1er Apellido</label>
         <input type="text" name="apellido" id="apellido" value=<?php echo "$resul[2]"?> readonly>
         <br><br>
-        <input type="submit" value="Borrar" name="borrar" id="borrar">
+        <input type="submit" value="Borrar" name="borrar" id="borrar" onclick="return confirmDelete()">
     </form>
     </div>
     <div class="cajafoto">
