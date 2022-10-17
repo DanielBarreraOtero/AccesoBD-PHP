@@ -21,7 +21,7 @@
             insertAlum(newConn(),$datos);
         }
         else {
-            echo 'Faltan campos por rellenar';
+            header("Location: Error.php?error=1&page=$page");
         }
     }
 ?>
